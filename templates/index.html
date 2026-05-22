@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Flask+C</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Snake Game</h1>
+    <p class="sub">Flask + C linked list (subprocess JSON)</p>
+  </header>
+  <section class="toolbar">
+    <button type="button" id="btn-start">Start Game</button>
+    <span class="stat">Score: <span id="score">0</span></span>
+    <span class="stat" id="status">Click Start Game</span>
+  </section>
+  <main id="board" class="board"></main>
+  <p class="hint">Snake moves automatically. Use WASD or arrow keys to turn.</p>
+  <section class="dpad">
+    <button type="button" data-key="W">W</button>
+    <div class="row">
+      <button type="button" data-key="A">A</button>
+      <button type="button" data-key="S">S</button>
+      <button type="button" data-key="D">D</button>
+    </div>
+  </section>
+  <script src="/static/js/game.js?v=2"></script>
+</body>
+</html>

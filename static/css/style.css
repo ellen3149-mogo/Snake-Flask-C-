@@ -1,0 +1,7 @@
+*{box-sizing:border-box}body{font-family:Segoe UI,Microsoft JhengHei,sans-serif;margin:0;padding:1rem;background:#1a1a2e;color:#eee}
+.top h1{margin:0}.sub{color:#aaa}.toolbar{display:flex;gap:1rem;align-items:center;margin:1rem 0}
+#btn-start{padding:.5rem 1rem;background:#4ecca3;border:none;border-radius:6px;font-weight:bold;cursor:pointer}
+.board{display:inline-grid;gap:2px;background:#16213e;padding:4px;border-radius:8px}
+.cell{width:22px;height:22px;background:#0f3460;border-radius:3px}.cell.snake{background:#4ecca3}.cell.head{background:#7bed9f}.cell.food{background:#e94560}
+.dpad{margin-top:1rem;display:flex;flex-direction:column;gap:4px}.dpad .row{display:flex;gap:4px}.dpad button{width:48px;height:48px;background:#533483;color:#fff;border:none;border-radius:8px;cursor:pointer}
+#status.lose{color:#e94560}
