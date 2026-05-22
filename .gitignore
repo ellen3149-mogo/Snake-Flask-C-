@@ -1,12 +1,33 @@
-.venv/
-venv/
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
 .env
+.env.*
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# C compile output
 *.exe
+*.out
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+native/snake_engine.exe
+native/snake_engine
+bin/
 native/*.o
 native/*.obj
-bin/
 .vscode/
 .idea/
 Thumbs.db
