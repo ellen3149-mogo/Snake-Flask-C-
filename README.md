@@ -1,11 +1,55 @@
-# 🐍 Snake Game（Flask + C）
+# 🐍 貪吃蛇遊戲（Snake Game）
 
-C 語言期末專題：以 Flask 作為 Web UI、C 語言核心引擎（Linked List、malloc/free）實作貪吃蛇遊戲。
+C 語言期末專題：用 Flask 做網頁介面、C 語言寫遊戲核心（Linked List、malloc/free）。
+
+---
+
+## ⚙️ 執行前需要裝好
+
+| 需要 | 說明 |
+|---|---|
+| **Python 3.10+** | [下載點](https://www.python.org/downloads/)｜安裝時記得勾 **Add Python to PATH** |
+| **MinGW（gcc）** | [下載點](https://github.com/niXman/mingw-builds-binaries/releases)｜解壓到 `C:\mingw64`，把 `C:\mingw64\bin` 加到系統 PATH |
+
+裝好後打開 CMD 確認：
+
+```cmd
+python --version
+gcc --version
+```
+
+兩個都有版本號就 OK ✅
+
+---
+
+## 🚀 怎麼開始
+
+### 第一次使用
+
+**雙擊 `setup.bat`**（只需要跑一次）
+
+它會自動幫你完成：
+1. 確認 Python 和 gcc 有沒有裝好
+2. 編譯 C 遊戲核心
+3. 建立 Python 虛擬環境並安裝套件
+
+看到 `Setup complete. Next: double-click run.bat` 就代表成功 ✅
+
+### 之後每次要玩
+
+**雙擊 `run.bat`**
+
+瀏覽器會自動開啟 **http://127.0.0.1:5001**
+
+1. 點 **Start Game**
+2. 蛇會自動移動，用 **WASD** 或**方向鍵**控制方向
+3. 關掉 CMD 視窗 = 遊戲結束
 
 ---
 
 ## 📁 專案架構
 
+```
 snake/
 ├── setup.bat                  # 第一次建置環境用
 ├── run.bat                    # 每次啟動遊戲用
@@ -18,69 +62,25 @@ snake/
 └── static/
     ├── game.js                # 遊戲邏輯（自動 tick、鍵盤監聽、API 呼叫）
     └── style.css              # 介面樣式
-
----
-
-## ⚙️ 系統需求
-
-| 項目 | 需求 |
-|---|---|
-| 作業系統 | **Windows**（CMD / PowerShell） |
-| Python | **3.10 或以上** |
-| C 編譯器 | **MinGW gcc**（需加入 PATH） |
-
----
-
-## 🚀 快速啟動（推薦）
-
-```cmd
-cd /d C:\Users\User\Downloads\snake
-run.bat
 ```
-
-瀏覽器開啟 **http://127.0.0.1:5001**
-
-1. 點擊 **Start Game**
-2. 蛇會自動移動，用 **WASD** 或 **方向鍵** 轉向
-
-> ⚠️ `run.bat` 會自動：① 編譯 C 核心 → ② 安裝 Python 套件 → ③ 啟動伺服器
-
----
-
-## 🔧 手動啟動（run.bat 失敗時用這個）
-
-```cmd
-cd /d C:\Users\User\Downloads\snake\native
-gcc -std=c11 -Wall -Wextra -O2 -o snake_engine.exe snake_engine.c
-cd ..
-python -m pip install -r requirements.txt
-python app.py
-```
-
----
-
-
-## 📡 API 一覽
-
-| Endpoint | Method | 說明 |
-|---|---|---|
-| `/api/game/start` | POST | 開始新遊戲 |
-| `/api/game/move` | POST | 傳送 `{"key":"W"}` (W/A/S/D) |
 
 ---
 
 ## 🎓 C 核心功能（作業要求）
 
-- `struct` 遊戲狀態、Singly Linked List 蛇身體
-- 移動 / 成長時動態 `malloc` / `free`
-- Python 子程序透過 JSON 行協議與 C 溝通
+- `struct` 儲存遊戲狀態，Singly Linked List 管理蛇的身體
+- 蛇移動 / 吃到食物時動態 `malloc` / `free`
+- Python 透過 subprocess 啟動 C 程式，以 JSON 格式傳遞遊戲資料
 
 ---
 
+## 📡 API
 
+| 路徑 | 方法 | 說明 |
+|---|---|---|
+| `/api/game/start` | POST | 開始新遊戲 |
+| `/api/game/move` | POST | 傳送方向 `{"key":"W"}` （W / A / S / D）|
 
 ---
 
-## 授權
-
-Educational project — 期末專題用途。
+Educational project｜期末專題
