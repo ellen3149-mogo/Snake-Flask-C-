@@ -24,33 +24,26 @@ gcc --version
 
 ## 🚀 怎麼開始
 
-### 第一次使用
-
-**雙擊 `setup.bat`**（只需要跑一次）
-
-它會自動幫你完成：
-1. 確認 Python 和 gcc 有沒有裝好
-2. 編譯 C 遊戲核心
-3. 建立 Python 虛擬環境並安裝套件
-
-看到 `Setup complete. Next: double-click run.bat` 就代表成功 ✅
-
-### 之後每次要玩
-
-開啟 CMD，切換到專案資料夾後執行 `run.bat`：
+**雙擊 `run.bat`**，或用 CMD 執行：
 
 ```cmd
 cd /d C:\Users\User\Downloads\snake
 run.bat
 ```
 
-或直接**雙擊 `run.bat`**，瀏覽器會自動開啟 **http://127.0.0.1:5001**
+`run.bat` 會自動完成：
+1. 確認 Python 和 gcc 有沒有裝好
+2. 編譯 C 遊戲核心
+3. 建立虛擬環境並安裝套件
+4. 啟動伺服器，自動開啟瀏覽器
+
+瀏覽器開啟 **http://127.0.0.1:5001**
 
 1. 點 **Start Game**
 2. 蛇會自動移動，用 **WASD** 或**方向鍵**控制方向
 3. 關掉 CMD 視窗 = 遊戲結束
 
-> `run.bat` 會自動確認環境 → 啟動伺服器
+> 💡 第二次之後直接雙擊 `run.bat` 就好，會自動跳過已完成的步驟
 
 ---
 
@@ -58,8 +51,7 @@ run.bat
 
 ```
 snake/
-├── setup.bat                  # 第一次建置環境用
-├── run.bat                    # 每次啟動遊戲用
+├── run.bat                    # 一鍵啟動（自動建置 + 開伺服器）
 ├── app.py                     # Flask 伺服器，處理網頁請求
 ├── requirements.txt           # Python 套件清單（flask）
 ├── native/
