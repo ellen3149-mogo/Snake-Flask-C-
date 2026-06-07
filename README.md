@@ -37,13 +37,20 @@ gcc --version
 
 ### 之後每次要玩
 
-**雙擊 `run.bat`**
+開啟 CMD，切換到專案資料夾後執行 `run.bat`：
 
-瀏覽器會自動開啟 **http://127.0.0.1:5001**
+```cmd
+cd /d C:\Users\User\Downloads\snake
+run.bat
+```
+
+或直接**雙擊 `run.bat`**，瀏覽器會自動開啟 **http://127.0.0.1:5001**
 
 1. 點 **Start Game**
 2. 蛇會自動移動，用 **WASD** 或**方向鍵**控制方向
 3. 關掉 CMD 視窗 = 遊戲結束
+
+> `run.bat` 會自動確認環境 → 啟動伺服器
 
 ---
 
