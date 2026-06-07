@@ -6,13 +6,18 @@ C 語言期末專題：以 Flask 作為 Web UI、C 語言核心引擎（Linked L
 
 ## 📁 專案架構
 
-| 檔案 / 資料夾 | 說明 |
-|---|---|
-| `app.py` | Flask 路由、Session、子程序橋接 |
-| `native/snake_engine.c` | C 核心：蛇移動、碰撞、食物、分數（JSON stdin/stdout） |
-| `templates/` | HTML 頁面 |
-| `static/` | CSS / JS 前端，含自動 tick 遊戲迴圈 |
-| `run.bat` | 一鍵啟動腳本（自動編譯 + 啟動伺服器） |
+snake/
+├── setup.bat                  # 第一次建置環境用
+├── run.bat                    # 每次啟動遊戲用
+├── app.py                     # Flask 伺服器，處理網頁請求
+├── requirements.txt           # Python 套件清單（flask）
+├── native/
+│   └── snake_engine.c         # C 語言遊戲核心，處理蛇的移動、碰撞、分數
+├── templates/
+│   └── index.html             # 遊戲主頁面
+└── static/
+    ├── game.js                # 遊戲邏輯（自動 tick、鍵盤監聽、API 呼叫）
+    └── style.css              # 介面樣式
 
 ---
 
